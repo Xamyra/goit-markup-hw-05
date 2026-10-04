@@ -436,8 +436,90 @@
         </ul>
       </div>
 
+      <div class="subscribe-section">
+        <p class="subscribe-title">Subscribe</p>
+        <form class="form-email">
+          <input class="input-email" type="email" name='input-email' value="" placeholder="E-mail">
+          <button type="submit" class="form-email-button">
+            Subscribe
+            <svg class="subscribe-telegram-icon" width="24" height="20">
+              <use href="./images/icons.svg#illustration-telegram"></use>
+            </svg>
+          </button>
+        </form>
+
+      </div>
+
     </div>
   </footer>
+
+  <div id="modal" class="backdrop">
+    <div class="modal-icon">
+
+      <button type="submit" class="cancel-button-backdrop">
+        <svg class="cancel-button-icon" width="24" height="20">
+          <use href="./images/icons.svg#illustration-cancel"></use>
+        </svg>
+      </button>
+
+      <p class="backdrop-title">Leave your contacts and we will call you back</p>
+      <form class="backdrop-form">
+        <fieldset class="input-group-form">
+          <label class="backdrop-label">
+            Name
+            <span class="backdrop-input-span">
+              <input type="text" name="name" class="backdrop-input">
+              <svg class="input-form-icon" width="12" height="12">
+                <use href="./images/icons.svg#illustration-man"></use>
+              </svg>
+            </span>
+
+          </label>
+          <label class="backdrop-label">
+            Phone
+            <span class="backdrop-input-span">
+              <input type="tel" name="phone-number" class="backdrop-input">
+              <svg class="input-form-icon" width="12" height="12">
+                <use href="./images/icons.svg#illustration-phone"></use>
+              </svg>
+            </span>
+          </label>
+          <label class="backdrop-label">
+            E-mail
+            <span class="backdrop-input-span">
+              <input type="email" name="email" class="backdrop-input">
+              <svg class="input-form-icon" width="12" height="12">
+                <use href="./images/icons.svg#illustration-mail"></use>
+              </svg>
+            </span>
+          </label>
+          <label class="backdrop-label">
+            Comment
+            <textarea name="message"  class="backdrop-input backdrop-textarea" placeholder="Text input"></textarea>
+          </label>
+
+          <input type="checkbox" name="policy" id="policy" class="policy-input sr-only">
+          <label for="policy" class="policy-label">
+
+            <span class="custom-checkbox">
+              <svg class="form-check-icon" width="10" height="8">
+                <use href="./images/icons.svg#check-mark1"></use>
+              </svg>
+            </span>
+
+            I accept the terms and conditions of the <span>
+              <a href="" class="span-policy">Privacy Policy</a>
+            </span>
+
+          </label>
+
+        </fieldset>
+
+        <button class="send-form-button" type="submit">Send</button>
+      </form>
+
+    </div>
+  </div>
 
 </body>
 

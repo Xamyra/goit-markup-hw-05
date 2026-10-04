@@ -63,3 +63,9 @@ img {
   clip-path: inset(100%);
   margin: -1px;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
