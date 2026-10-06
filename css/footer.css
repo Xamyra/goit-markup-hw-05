@@ -76,11 +76,11 @@
   gap: 24px;
   align-items: center;
   margin-top: 16px;
+  margin-left: 15px;
 }
 
 .subscribe-section {
   margin-left: auto;
-  margin-right: 15px;
 }
 
 .subscribe-title {
@@ -99,6 +99,10 @@
   width: 264px;
   height: 40px;
   background-color: transparent;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
 }
 
 .form-email-button {
@@ -111,11 +115,18 @@
   max-width: 165px;
   padding: 8px 24px 8px 24px;
   color: #FFFFFF;
-  transition: background-color 250ms ease-in-out(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-email-button:hover {
+.form-email-button:hover,
+.form-email-button:focus {
   background-color: #31D0AA;
+  border-color: #31D0AA;
 }
 
 .input-email:focus {
