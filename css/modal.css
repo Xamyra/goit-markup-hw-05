@@ -97,8 +97,7 @@
   line-height: 14px;
   letter-spacing: 0.04em;
   width: 100%;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -115,7 +114,9 @@
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #434455
+  color: #434455;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop-input.backdrop-textarea {
@@ -126,16 +127,13 @@
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  margin-top: 8px;
 }
 
 .backdrop-input:focus {
   border-color: #4D5AE5;
 }
 
-.input-form-icon+.backdrop-input:focus {
+.backdrop-input:focus+input-form-icon {
   color: #4D5AE5;
 }
 
@@ -144,7 +142,7 @@
   flex-direction: column;
   border: none;
   width: 100%;
-  gap: 8px;
+  gap: 16px;
 }
 
 .span-policy {
@@ -161,18 +159,17 @@
   background-color: #4D5AE5;
   box-shadow: 0px 4px 4px 0px #00000026;
   font-weight: 500;
-  font-size: 16;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #FFFF;
   cursor: pointer;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.send-form-button:hover {
-  background-color: #404BBF;
+.send-form-button:hover,
+send-form-button:focus {
   color: #FFFF;
 }
 
@@ -194,6 +191,8 @@
   left: 16px;
   transform: translateY(-50%);
   pointer-events: none;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .policy-label {
@@ -251,4 +250,8 @@
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
+}
+
+.backdrop-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
 }
