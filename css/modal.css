@@ -170,7 +170,7 @@
 
 .send-form-button:hover,
 .send-form-button:focus {
-  color: #FFFF;
+  background-color: #404bbf;
 }
 
 .policy-input {
