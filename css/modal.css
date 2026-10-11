@@ -16,6 +16,12 @@
   align-items: center;
 }
 
+.backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
 .modal-icon {
   position: relative;
   background-color: #FCFCFC;
@@ -23,27 +29,11 @@
 
   box-shadow: 0px 1px 1px 0px #00000024, 0px 1px 3px 0px #0000001F, 0px 2px 1px 0px #00000033;
 
-
   width: 408px;
   height: 582px;
   padding: 72px 24px 24px 24px;
 
   border-radius: 4px;
-}
-
-.backdrop-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  border-radius: 4px;
-  border: none;
-}
-
-.cancel-button-icon {
-  display: block;
-  fill: currentColor;
 }
 
 .cancel-button-backdrop {
@@ -77,6 +67,11 @@
   color: #ffffff;
 }
 
+.cancel-button-icon {
+  display: block;
+  fill: currentColor;
+}
+
 .backdrop-title {
   font-weight: 500;
   font-size: 16px;
@@ -85,6 +80,23 @@
   text-align: center;
 
   margin-bottom: 16px;
+}
+
+.backdrop-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  border: none;
+}
+
+.input-group-form {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  gap: 8px;
 }
 
 .backdrop-label {
@@ -100,6 +112,9 @@
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backdrop-input-span {
+  position: relative;
+}
 
 .backdrop-input {
   max-width: 360px;
@@ -119,6 +134,24 @@
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backdrop-input:focus {
+  border-color: #4D5AE5;
+}
+
+.backdrop-input:focus+.input-form-icon {
+  color: #4D5AE5;
+}
+
+.input-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .backdrop-input.backdrop-textarea {
   resize: none;
   height: 120px;
@@ -129,20 +162,69 @@
   letter-spacing: 0.04em;
 }
 
-.backdrop-input:focus {
-  border-color: #4D5AE5;
+.backdrop-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
 }
 
-.backdrop-input:focus+.input-form-icon {
-  color: #4D5AE5;
+.policy-input {
+  color: transparent;
+  width: 14px;
+  height: 14px;
+  border: 0.88px solid #2E2F4266;
+  border-radius: 1.75px;
 }
 
-.input-group-form {
+.policy-label {
   display: flex;
-  flex-direction: column;
-  border: none;
-  width: 100%;
+  align-items: center;
   gap: 8px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+
+  cursor: pointer;
+
+  width: 344px;
+
+  margin-top: 8px;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+
+  flex-shrink: 0;
+
+  border: 0.88px solid #2E2F4266;
+  border-radius: 1.75px;
+
+  color: #F4F4FD;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-input:checked+.policy-label .custom-checkbox {
+  background-color: #404BBF;
+  border-color: #404BBF;
+  border-radius: 2px;
+}
+
+.form-check-icon {
+  display: block;
+  opacity: 0;
+}
+
+.policy-input:checked+.policy-label .form-check-icon {
+  opacity: 1;
 }
 
 .span-policy {
@@ -171,89 +253,4 @@
 .send-form-button:hover,
 .send-form-button:focus {
   background-color: #404bbf;
-}
-
-.policy-input {
-  color: transparent;
-  width: 14px;
-  height: 14px;
-  border: 0.88px solid #2E2F4266;
-  border-radius: 1.75px;
-}
-
-.backdrop-input-span {
-  position: relative;
-}
-
-.input-form-icon {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.policy-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-
-  cursor: pointer;
-
-  width: 343px;
-
-  margin-top: 8px;
-}
-
-.custom-checkbox {
-  width: 16px;
-  height: 16px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-
-  flex-shrink: 0;
-
-  border: 0.88px solid #2E2F4266;
-  border-radius: 1.75px;
-
-  color: #F4F4FD;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-check-icon {
-  display: block;
-  opacity: 0;
-}
-
-.policy-input:checked+.policy-label .custom-checkbox {
-  background-color: #404BBF;
-  border-color: #404BBF;
-  border-radius: 2px;
-}
-
-.policy-input:checked+.policy-label .form-check-icon {
-  opacity: 1;
-}
-
-.backdrop.is-open {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-}
-
-.backdrop-textarea::placeholder {
-  color: rgba(46, 47, 66, 0.4);
 }
